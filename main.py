@@ -1,7 +1,7 @@
 import cv2
 import datetime
 
-video_file = ['test-link1','test-link2']
+video_file = ['test1.mp4','test2.mp4']
 
 for vid  in video_file:
     # Create a VideoCapture object
@@ -59,7 +59,7 @@ for vid  in video_file:
         cv2.imshow('video player', frame)
 
         # Wait for a key press and quit the program if the 'q' key is pressed
-        key = cv2.waitKey(1) & 0xFF
+        key = cv2.waitKey(25) & 0xFF
         if key == ord('q'):
             break
 
