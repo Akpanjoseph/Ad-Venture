@@ -19,6 +19,9 @@ for vid  in video_file:
     # Set the font and font scale for the progress bar text
     font = cv2.FONT_HERSHEY_SIMPLEX
     font_scale = 1
+    cv2.namedWindow('video player',cv2.WINDOW_KEEPRATIO)
+    cv2.setWindowProperty('video player',cv2.WND_PROP_ASPECT_RATIO,cv2.WINDOW_KEEPRATIO)
+    cv2.setWindowProperty('video player',cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
 
     # Loop through the video frames and display them on the TV
     while True:
@@ -56,7 +59,9 @@ for vid  in video_file:
         cv2.putText(frame, text, (bar_x + 10, bar_y + bar_height - 5), font, font_scale, (255, 255, 255), 2)
 
         # Display the frame on the TV
-        cv2.imshow('video player', frame)
+        # cv2.imshow('video player', frame)
+        cv2.imshow('video player',frame)
+        # if cv2.waitKey(1) == ord('q'): break
 
         # Wait for a key press and quit the program if the 'q' key is pressed
         key = cv2.waitKey(25) & 0xFF
